@@ -6,17 +6,17 @@ export default function Contents() {
     <section className="py-10 grid grid-cols-3 font-serif">
       <div className="col-span-1 flex justify-center">
         <Link href="/">
-          <p className="text-lg ml-10 my-5 underline"> + Create New Group</p>
+          <p className="text-lg my-5 underline"> + Create New Group</p>
         </Link>
       </div>
       <div className="col-span-1 flex justify-center">
         <Link href="/">
-          <p className="text-lg ml-10 my-5 underline"> All Study Groups</p>
+          <p className="text-lg my-5 underline"> All Study Groups</p>
         </Link>
       </div>
       <div className="col-span-1 flex justify-center">
         <Link href="/">
-          <p className="text-lg ml-10 my-5 underline"> Joined Groups</p>
+          <p className="text-lg my-5 underline"> Joined Groups</p>
         </Link>
       </div>
     </section>
