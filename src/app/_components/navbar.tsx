@@ -18,7 +18,7 @@ export default function NavBar() {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <section className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/">
+          <Link href="/home">
             <Image
               src="/image/page-logo.png"
               alt="logo"

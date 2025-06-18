@@ -31,7 +31,7 @@ export default function Header() {
                 in your learning journey.
                 <br />
                 At Studybara, studying is calm, cozy, and just a little more
-                capybara.🌞
+                capybara.✨
               </p>
             </div>
           </section>
