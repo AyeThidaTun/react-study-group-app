@@ -1,70 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { allGroups } from "./dummy-data";
+import JoinDialog from "./join-dialog";
 
 export default function Groups() {
-  const groups = [
-    {
-      id: 1,
-      name: "Computer Science Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "2",
-    },
-    {
-      id: 2,
-      name: "Design Enthusiasts",
-      image: "/image/avatar.jpg",
-      noOfMembers: "10",
-    },
-    {
-      id: 3,
-      name: "Math Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "10",
-    },
-    {
-      id: 4,
-      name: "AI Researchers",
-      image: "/image/avatar.jpg",
-      noOfMembers: "8",
-    },
-    {
-      id: 5,
-      name: "Physics Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "8",
-    },
-    {
-      id: 6,
-      name: "Chemistry Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "14",
-    },
-    {
-      id: 7,
-      name: "Computer Science Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "14",
-    },
-    {
-      id: 8,
-      name: "Interest Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "2",
-    },
-    {
-      id: 9,
-      name: "Hobby Group",
-      image: "/image/avatar.jpg",
-      noOfMembers: "7",
-    },
-    {
-      id: 10,
-      name: "Python Enthusiasts",
-      image: "/image/avatar.jpg",
-      noOfMembers: "7",
-    },
-  ];
+  const groups = allGroups;
 
   return (
     <section className="">
@@ -84,12 +25,14 @@ export default function Groups() {
                 <p className="text-md pt-5">{group.name}</p>
                 <p className="text-xs pb-5">{group.noOfMembers} Members</p>
                 <div className="flex items-center space-x-2">
-                  <Button variant="link" size="sm">
-                  View
-                </Button>
-                <Button variant="secondary" size="sm">
-                  Join
-                </Button>
+                  <Button variant="link" size="sm" id={group.id}>
+                    View
+                  </Button>
+                  <JoinDialog id={group.id}>
+                    <Button variant="secondary" size="sm">
+                      Join
+                    </Button>
+                  </JoinDialog>
                 </div>
               </div>
             </CardContent>
