@@ -24,14 +24,14 @@ export default function Header() {
                 <br />
                 <br />
                 Join or create study groups, chat with your peers, and stay
-                motivated together.👋
+                motivated together.
                 <br />
                 <br />
                 With shared goals and gentle reminders, you’ll never feel alone
                 in your learning journey.
                 <br />
                 At Studybara, studying is calm, cozy, and just a little more
-                capybara.✨
+                capybara.
               </p>
             </div>
           </section>

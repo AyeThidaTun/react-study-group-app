@@ -1,23 +1,28 @@
-import Link from "next/link";
-// import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Icon } from "@iconify/react";
+import CreateDialog from "./create-dialog";
+import { Input } from "@/components/ui/input";
 
 export default function Contents() {
   return (
-    <section className="py-10 grid grid-cols-3 font-serif">
-      <div className="col-span-1 flex justify-center">
-        <Link href="/">
-          <p className="text-lg my-5 underline"> + Create New Group</p>
-        </Link>
-      </div>
-      <div className="col-span-1 flex justify-center">
-        <Link href="/">
-          <p className="text-lg my-5 underline"> All Study Groups</p>
-        </Link>
-      </div>
-      <div className="col-span-1 flex justify-center">
-        <Link href="/">
-          <p className="text-lg my-5 underline"> Joined Groups</p>
-        </Link>
+    <section className="pt-10 py-5">
+      <div className="flex justify-between">
+        <div className="relative w-80">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-2xl text-muted-foreground">
+            <Icon icon="material-symbols-light:search-rounded" />
+          </span>
+          <Input
+            type="text"
+            placeholder="Search..."
+            className="pl-10 pr-3 py-2"
+          />
+        </div>
+        <CreateDialog>
+          <Button variant="user" size="lg">
+            <Icon icon="ic:round-plus" />
+            Create New Group
+          </Button>
+        </CreateDialog>
       </div>
     </section>
   );
