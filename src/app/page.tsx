@@ -1,7 +1,5 @@
+import { redirect } from "next/navigation";
 export default function WelcomePage() {
-  return (
-    <main>
-      <p>Welcome User!</p>
-    </main>
-  );
+  //gets redirected to home page
+  redirect("/home");
 }
