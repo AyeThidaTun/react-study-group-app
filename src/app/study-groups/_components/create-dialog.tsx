@@ -52,7 +52,7 @@ export default function CreateDialog({ children }: Props) {
                 />
               </div>
             </div>
-            <DialogFooter className="pt-6">
+            <DialogFooter className="flex flex-row justify-end gap-2 pt-6">
               <DialogClose asChild>
                 <Button variant="secondary">Cancel</Button>
               </DialogClose>

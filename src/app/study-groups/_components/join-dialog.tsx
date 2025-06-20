@@ -23,7 +23,7 @@ export default function JoinDialog({ children, id }: Props) {
       <Dialog>
         <form>
           <DialogTrigger asChild>{children}</DialogTrigger>
-          <DialogContent className="max-w-3">
+          <DialogContent>
             <DialogHeader>
               <DialogTitle></DialogTitle>
               <DialogDescription className="text-sm font-medium text-black">
