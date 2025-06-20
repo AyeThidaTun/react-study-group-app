@@ -4,14 +4,14 @@ import Image from "next/image";
 export default function Header() {
   return (
     <section className="">
-      <Card>
+      <Card className="mx-2 sm:mx-3">
         <CardContent>
-          <section className="grid grid-cols-6">
+          <section className="grid md:grid-cols-6 grid-cols-1">
             <div className="col-span-1 flex items-center justify-center">
               <Image
                 src="/image/pic-banner.png"
                 alt="pic"
-                className=""
+                className="sm:mr-6"
                 width={100}
                 height={100}
               />

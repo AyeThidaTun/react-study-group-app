@@ -8,11 +8,11 @@ export default function Groups() {
   const groups = allGroups;
 
   return (
-    <section className="">
+    <section className="md:p-0 p-3">
       <h2 className="flex items-center text-xl font-bold py-7">All Groups</h2>
-      <div className="grid grid-cols-4 gap-6 pb-10">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-6 pb-10">
         {groups.map((group) => (
-          <Card key={group.id}>
+          <Card key={group.id} className="">
             <CardContent>
               <div className="flex flex-col items-center">
                 <Image

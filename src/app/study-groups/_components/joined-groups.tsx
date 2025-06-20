@@ -50,38 +50,36 @@ export default function JoinedGroups() {
   ];
 
   return (
-    <section className="py-5">
+    <section className="py-5 md:p-0 p-3">
       <h1 className="text-xl font-bold pb-5">Your Groups</h1>
       <Carousel
         opts={{
           align: "start",
         }}
-        className="w-full"
+        className="md:w-full w-3xs mx-auto"
       >
         <CarouselContent>
           {joinedGroups.map((group, index) => (
-            <CarouselItem key={index} className="basis-1/3">
-              <div className="">
-                <Card key={group.id} className="py-3">
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Image
-                          src={group.image}
-                          alt={`${group.name} avatar`}
-                          className="border rounded-full"
-                          width={50}
-                          height={50}
-                        />
-                        <p className="text-md p-3">{group.name}</p>
-                      </div>
-                      {/* <Button variant="ghost" size="sm">
-                        View
-                      </Button> */}
+            <CarouselItem key={index} className="md:basis-1/3 basis-1/2">
+              <Card key={group.id} className="h-full py-3">
+                <CardContent className="h-full flex flex-col justify-between">
+                  <div className="flex md:flex-row flex-col items-center justify-between gap-2 h-full">
+                    <div className="flex items-center md:flex-row flex-col text-center md:text-left gap-3">
+                      <Image
+                        src={group.image}
+                        alt={`${group.name} avatar`}
+                        className="border rounded-full"
+                        width={50}
+                        height={50}
+                      />
+                      <p className="text-md font-medium break-words max-w-[150px]">
+                        {group.name}
+                      </p>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
+                    {/* You can add a view button or member count here */}
+                  </div>
+                </CardContent>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -5,8 +5,8 @@ import { Input } from "@/components/ui/input";
 
 export default function Contents() {
   return (
-    <section className="pt-10 py-5">
-      <div className="flex justify-between">
+    <section className="md:pt-10 md:py-10 md:p-0 p-3">
+      <div className="flex md:justify-between gap-2">
         <div className="relative w-80">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-2xl text-muted-foreground">
             <Icon icon="material-symbols-light:search-rounded" />
@@ -20,7 +20,7 @@ export default function Contents() {
         <CreateDialog>
           <Button variant="user" size="lg">
             <Icon icon="ic:round-plus" />
-            Create New Group
+            <span className="hidden md:inline">Create New Group</span>
           </Button>
         </CreateDialog>
       </div>
