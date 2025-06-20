@@ -72,7 +72,7 @@ export default function JoinedGroups() {
                         width={50}
                         height={50}
                       />
-                      <p className="text-md font-medium break-words max-w-[150px]">
+                      <p className="text-sm max-w-[150px] md:text-nowrap">
                         {group.name}
                       </p>
                     </div>
