@@ -23,7 +23,7 @@ export default function Groups() {
                   width={100}
                   height={100}
                 />
-                <p className="text-md pt-5">{group.name}</p>
+                <p className="text-md text-center pt-5">{group.name}</p>
                 <p className="text-xs pb-5">{group.noOfMembers} Members</p>
                 <div className="flex items-center space-x-2">
                   <Button variant="link" size="sm">

@@ -10,9 +10,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 
 export default function Header() {
   const group = allGroups[1];
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
     <section className="pt-10 pb-5">
       <div className="flex md:flex-row md:items-center items-start md:justify-between md:gap-2 h-full gap-20">
@@ -32,29 +36,47 @@ export default function Header() {
         <div className="hidden md:flex flex-row space-x-4">
           <JoinDialog id={group.id}>
             <Button size="lg" variant="user">
-              Join{" "}
+              Join
             </Button>
           </JoinDialog>
           <Button size="lg" variant="outline">
-            Report{" "}
+            Report
           </Button>
         </div>
         <div className="md:hidden pt-5">
-          <DropdownMenu>
+          <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="p-0">
-                <Icon icon="charm:menu-kebab"/>
+                <Icon icon="charm:menu-kebab" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <JoinDialog id={group.id}>
-                <DropdownMenuItem>Join</DropdownMenuItem>
-              </JoinDialog>
-              <DropdownMenuItem onClick={() => alert("Reported!")}>
+              <DropdownMenuItem
+                onSelect={(e) => {
+                  e.preventDefault();
+                  setDropdownOpen(false);
+                  setTimeout(() => {
+                    setDialogOpen(true);
+                  }, 0);
+                }}
+              >
+                Join
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => {
+                  alert("Reported!");
+                  setDropdownOpen(false);
+                }}
+              >
                 Report
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+          <JoinDialog
+            id={group.id}
+            open={dialogOpen}
+            onOpenChange={setDialogOpen}
+          />
         </div>
       </div>
     </section>
