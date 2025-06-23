@@ -18,7 +18,12 @@ type Props = {
   onOpenChange?: (open: boolean) => void;
 };
 
-export default function JoinDialog({ children, id, open, onOpenChange }: Props) {
+export default function JoinDialog({
+  children,
+  id,
+  open,
+  onOpenChange,
+}: Props) {
   const group = allGroups.find((group) => group.id === id);
   if (!group) return null;
 
@@ -27,18 +32,18 @@ export default function JoinDialog({ children, id, open, onOpenChange }: Props) 
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Request to Join</DialogTitle>
-          <DialogDescription>
-            Would you like to request to join <strong>{group.name}</strong>?
+          <DialogTitle></DialogTitle>
+          <DialogDescription className="text-sm font-medium text-black">
+            Would you like to request to join {group.name}?
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="pt-6">
           <DialogClose asChild>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" className="md:py-0 py-5">
               Cancel
             </Button>
           </DialogClose>
-          <Button type="submit" variant="user" size="sm">
+          <Button type="submit" variant="user" size="sm" className="md:py-0 py-5">
             Request to join
           </Button>
         </DialogFooter>
