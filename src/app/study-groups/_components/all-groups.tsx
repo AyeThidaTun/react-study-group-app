@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { allGroups } from "./dummy-data";
 import JoinDialog from "./join-dialog";
+import Link from "next/link";
 
 export default function Groups() {
   const groups = allGroups;
@@ -25,8 +26,8 @@ export default function Groups() {
                 <p className="text-md pt-5">{group.name}</p>
                 <p className="text-xs pb-5">{group.noOfMembers} Members</p>
                 <div className="flex items-center space-x-2">
-                  <Button variant="link" size="sm" id={group.id}>
-                    View
+                  <Button variant="link" size="sm">
+                    <Link href={`/study-groups/view-study-group/${group.id}`}>View</Link>
                   </Button>
                   <JoinDialog id={group.id}>
                     <Button variant="secondary" size="sm">
