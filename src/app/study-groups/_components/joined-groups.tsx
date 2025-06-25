@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Link from "next/link";
 // import { Button } from "@/components/ui/button";
 
 export default function JoinedGroups() {
@@ -72,9 +73,11 @@ export default function JoinedGroups() {
                         width={50}
                         height={50}
                       />
+                      <Link href={`/study-groups/view-study-group/${group.id}`}>
                       <p className="text-sm max-w-[150px] md:text-nowrap">
                         {group.name}
                       </p>
+                      </Link>
                     </div>
                     {/* You can add a view button or member count here */}
                   </div>
